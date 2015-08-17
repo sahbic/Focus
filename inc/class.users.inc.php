@@ -151,7 +151,7 @@ EMAIL;
             }
             else
             {
-                return array(4, "<h2>Verification Error</h2>n"
+                return array(4, "<h2>Verification Error</h2>"
                     . "<p>This account has already been verified. "
                     . "Did you <a href=\"/password.php\">forget "
                     . "your password?</a>");
@@ -207,25 +207,26 @@ EMAIL;
      *
      * @return mixed    an array of info or FALSE on failure
      */
-    public function retrieveAccountInfo()
-    {
-        $sql = "SELECT UserID, ver_code
+     public function retrieveAccountInfo($user=NULL)
+     {
+      $user = isset($user) ? $user : $_SESSION['Username'];
+      $sql = "SELECT UserID, ver_code
                 FROM users
                 WHERE Username=:user";
-        try
-        {
-            $stmt = $this->_db->prepare($sql);
-            $stmt->bindParam(':user', $_SESSION['Username'], PDO::PARAM_STR);
-            $stmt->execute();
-            $row = $stmt->fetch();
-            $stmt->closeCursor();
-            return array($row['UserID'], $row['ver_code']);
-        }
-        catch(PDOException $e)
-        {
-            return FALSE;
-        }
-    }
+      try
+      {
+      	$stmt = $this->_db->prepare($sql);
+      	$stmt->bindParam(':user', $user, PDO::PARAM_STR);
+      	$stmt->execute();
+      	$row = $stmt->fetch();
+      	$stmt->closeCursor();
+      	return array($row['UserID'], $row['ver_code']);
+      }
+      catch(PDOException $e)
+      {
+      	return FALSE;
+      }
+     }
 
     /**
      * Changes a user's email address
@@ -351,31 +352,34 @@ EMAIL;
      *
      * @return mixed    TRUE on success and a message on failure
      */
-    public function resetPassword()
-    {
-        $sql = "UPDATE users
-                SET verified=0
-                WHERE Username=:user
-                LIMIT 1";
-        try
-        {
-            $stmt = $this->_db->prepare($sql);
-            $stmt->bindParam(":user", $_POST['username'], PDO::PARAM_STR);
-            $stmt->execute();
-            $stmt->closeCursor();
-        }
-        catch(PDOException $e)
-        {
-            return $e->getMessage();
-        }
-
-        // Send the reset email
-        if(!$this->sendResetEmail($_POST['username'], $v))
-        {
-            return "Sending the email failed!";
-        }
-        return TRUE;
-    }
+     public function resetPassword()
+   	{
+   		list($u, $v) = $this->retrieveAccountInfo($_POST['username']);
+   		if(!isset($u)) { echo "No account found! <a href=\"/password.php\">Try again.</a>"; return FALSE; }
+   		$sql = "UPDATE users
+   				SET verified=0
+   				WHERE UserID=:user
+   				AND ver_code=:ver
+   				LIMIT 1";
+   		try
+   		{
+   			$stmt = $this->_db->prepare($sql);
+   			$stmt->bindParam(":user", $u, PDO::PARAM_STR);
+   			$stmt->bindParam(":ver", $v, PDO::PARAM_STR);
+   			$stmt->execute();
+   			$stmt->closeCursor();
+   		}
+   		catch(PDOException $e)
+   		{
+   			return $e->getMessage();
+   		}
+   		// Send the reset email
+   		if(!$this->sendResetEmail($_POST['username'], $v))
+   		{
+   			return "Sending the email failed!";
+   		}
+   		return TRUE;
+   	}
 
     /**
      * Sends a link to a user that lets them reset their password

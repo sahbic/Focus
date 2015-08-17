@@ -18,7 +18,6 @@
                 <button type="submit" name="reset" id="reset" class="btn btn-primary">Reset Password</button>
               </div>
             </div>
-
           </form>
         </div>
 <?php

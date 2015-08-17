@@ -1,36 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Focus</title>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/bootstrap-colorpicker.min.css" rel="stylesheet">
-  <link href="css/slider.css" rel="stylesheet">
-  <link href="css/cover.css" rel="stylesheet">
-</head>
-<body>
-
-  <div class="site-wrapper">
-
-    <div class="site-wrapper-inner">
-
-      <div class="cover-container">
-
-        <div class="masthead clearfix">
-          <div class="inner">
-            <h3 class="masthead-brand"><a href="index.html">Focus</a></h3>
-            <nav>
-              <ul class="nav masthead-nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Features</a></li>
-                <li class="active"><a href="getstarted.html">Get started</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
+<?php
+	include_once "common/base.php";
+	$pageTitle = "StylistBot Configuration";
+	include_once "common/header.php";
+?>
 
         <div class="bs-example">
           <form class="form-horizontal" role="form" id="addClothesForm" method="post" action="process.php">
@@ -52,7 +24,7 @@
               <label for="ItemColor" class="control-label col-xs-2">Color</label>
               <div class="col-xs-10">
                 <div class="input-group colorpicker-component">
-                  <input type="text" id="ItemColor" name="ItemColor" placeholder="#00AABB" class="form-control"/>
+                  <input type="text" id="ItemColor" name="ItemColor" placeholder="#000000" class="form-control" value="#000000"/>
                   <span class="input-group-addon"><i></i></span>
                 </div>
               </div>
@@ -102,30 +74,6 @@
           </form>
         </div>
 
-        <div class="mastfoot">
-          <div class="inner">
-            <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/bootstrap-slider.js"></script>
-  <script src="js/bootstrap-colorpicker.js"></script>
-  <script>
-  $(function(){
-    $('#inputColor').colorpicker();
-    $('#inputThickness').slider();
-    $('#inputFormality').slider();
-    $('#inputLength').slider();
-    $('#inputAttractive').slider();
-    $('#inputFit').slider();
-  });
-  </script>
-</body>
-</html>
+<?php
+	include_once 'common/close.php';
+?>

@@ -4,7 +4,7 @@
     if(isset($_GET['v']) && isset($_GET['e']))
     {
         include_once "inc/class.users.inc.php";
-        $users = new ColoredListsUsers($db);
+        $users = new FocusUsers($db);
         $ret = $users->verifyAccount();
     }
     elseif(isset($_POST['v']))
@@ -30,7 +30,9 @@
         if($ret[0]<3):
 ?>
 
+
         <div class="inner cover">
+          <br/><br/>
           <form class="form-horizontal" role="form" method="post" action="accountverify.php">
             <div class="form-group">
               <label for="p" class="control-label col-xs-2">Choose a New Password:</label>

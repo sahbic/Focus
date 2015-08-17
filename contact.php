@@ -1,6 +1,6 @@
 <?php
 	include_once "common/base.php";
-	$pageTitle = "Home";
+	$pageTitle = "Contact";
 	include_once "common/header.php";
 ?>
 

@@ -15,12 +15,12 @@
     <script src="js/bootstrap-colorpicker.js"></script>
     <script>
     $(function(){
-    $('#inputColor').colorpicker();
-    $('#inputThickness').slider();
-    $('#inputFormality').slider();
-    $('#inputLength').slider();
-    $('#inputAttractive').slider();
-    $('#inputFit').slider();
+    $('.colorpicker-component').colorpicker();
+    $('#Thickness').slider();
+    $('#Formality').slider();
+    $('#Length').slider();
+    $('#Attractiveness').slider();
+    $('#Fitness').slider();
     });
     </script>
   </body>
