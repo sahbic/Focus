@@ -12,17 +12,15 @@
 
         <div class="inner cover">
           <form class="form-horizontal" role="form" method="post" action="signup.php" id="registerform">
-            <div class="form-group">
-              <label for="username" class="control-label col-xs-2">Email</label>
-              <div class="col-xs-10">
-                <input type="text" class="form-control" id="username" name="username" placeholder="Email" value="">
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-xs-offset-2 col-xs-10">
-                <button type="submit" name="register" id="register" class="btn btn-primary">Sign Up</button>
-              </div>
-            </div>
+						 <div class="col-md-6 col-md-offset-3">
+	            <div class="form-group">
+	              <!-- <label for="username" class="control-label col-xs-2">Email</label> -->
+	                <input type="text" class="form-control" id="username" name="username" placeholder="Email" value="">
+	            </div>
+	            <div class="form-group">
+	                <button type="submit" name="register" id="register" class="btn btn-primary btn-block">Sign Up</button>
+	            </div>
+						</div>
           </form>
         </div>
 

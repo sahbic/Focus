@@ -2,6 +2,12 @@
  * Globals
  */
 
+ /*Separator*/
+ .separator{
+   border-color: #737373;
+   opacity: 0.5;
+ }
+
 /* Links */
 a,
 a:focus,
@@ -111,7 +117,7 @@ body {
  */
 
 .cover {
-  padding: 0 20px;
+  padding: 0px 20px;
 }
 .cover .btn-lg {
   padding: 10px 20px;
@@ -123,6 +129,10 @@ body {
   color: #999; /* IE8 proofing */
   color: rgba(255,255,255,.5);
   font-size: 10px;
+}
+
+.full {
+  padding: 100px 20px;
 }
 
 /*
@@ -142,7 +152,7 @@ body {
 @media (min-width: 768px) {
   /* Pull out the header and footer */
   .masthead {
-    position: fixed;
+    position: absolute;
     top: 0;
   }
   .mastfoot {
@@ -159,6 +169,7 @@ body {
   .cover-container {
     width: 100%; /* Must be percentage or pixels for horizontal alignment */
   }
+
 }
 
 @media (min-width: 992px) {

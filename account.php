@@ -51,7 +51,7 @@
             </div>
           </div>
         </form>
-        <br /><hr /><br />
+        <br /><hr/ class="separator"><br />
 
 
         <form class="form-horizontal" role="form" method="post" action="db-interaction/users.php" id="change-password-form">
@@ -76,7 +76,7 @@
           <br />
           <button type="submit" name="change-password-submit" id="change-password-submit" class="btn btn-primary">Change Password</button>
         </form>
-        <br /><hr />
+        <br /><hr/ class="separator">
 
         <form class="form-horizontal" method="post" action="deleteaccount.php"
             id="delete-account-form">

@@ -23,20 +23,14 @@
           <br/>
           <br/>
           <form class="form-horizontal" role="form" method="post" action="login.php" name="loginform" id="loginform">
-            <div class="form-group">
-              <label for="username" class="control-label col-xs-2">Email</label>
-              <div class="col-xs-10">
+            <div class="col-md-6 col-md-offset-3">
+              <div class="form-group">
                 <input type="text" class="form-control" id="username" name="username" placeholder="Email" value="">
               </div>
-            </div>
-            <div class="form-group">
-              <label for="password"class="control-label col-xs-2">Password</label>
-              <div class="col-xs-10">
+              <div class="form-group">
                 <input class="form-control" type="password" name="password" id="password" placeholder="Password" value="">
               </div>
-            </div>
-            <div class="form-group">
-              <div class="col-xs-offset-2 col-xs-10">
+              <div class="form-group">
                 <button type="submit" name="login" id="login" value="Login" class="btn btn-primary">Log In</button>
                 <p class="discrete"><a href="/password.php">Did you forget your password?</a></p>
               </div>
@@ -51,21 +45,16 @@
 
         <div class="inner cover">
           <form class="form-horizontal" role="form" method="post" action="login.php" name="loginform" id="loginform">
-            <div class="form-group">
-              <label for="username" class="control-label col-xs-2">Email</label>
-              <div class="col-xs-10">
+            <div class="col-md-6 col-md-offset-3">
+              <div class="form-group">
                 <input type="text" class="form-control" id="username" name="username" placeholder="Email" value="">
               </div>
-            </div>
-            <div class="form-group">
-              <label for="password"class="control-label col-xs-2">Password</label>
-              <div class="col-xs-10">
+              <div class="form-group">
                 <input class="form-control" type="password" name="password" id="password" placeholder="Password" value="">
               </div>
-            </div>
-            <div class="form-group">
-              <div class="col-xs-offset-2 col-xs-10">
-                <button type="submit" name="login" id="login" value="Login" class="btn btn-primary">Log In</button>
+              <div class="form-group">
+                <button type="submit" name="login" id="login" value="Login" class="btn btn-primary btn-block">Log In</button>
+              </br>
                 <p class="discrete"><a href="/password.php">Did you forget your password?</a></p>
               </div>
             </div>

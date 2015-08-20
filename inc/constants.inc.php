@@ -6,4 +6,6 @@
     define('DB_PASS', 'pass');
     define('DB_NAME', 'focus_db');
 
+    // HTML Whitelist
+    define('WHITELIST', '<b><i><strong><em><a>');
 ?>
