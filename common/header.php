@@ -9,6 +9,7 @@
     <link href="css/bootstrap-colorpicker.min.css" rel="stylesheet">
     <link href="css/slider.css" rel="stylesheet">
     <link href="css/cover.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
   </head>
   <body>
 

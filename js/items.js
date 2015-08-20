@@ -1,5 +1,6 @@
 function initialize() {
   $('#add-new').submit(function () {
+      console.log("hey")
     var table = document.getElementById("list");
 
     var userID = $("#userid").val(),
@@ -21,7 +22,8 @@ function initialize() {
           "&attractiveness=" + itemAttractiveness + "&fitness=" + itemFitness,
           success: function(theResponse){
             // console.log(theResponse)
-            $("#list").append("<tr id="+theResponse+"><td>"+itemName+"</td><td>"+itemType+"</td><td><input type='button' class='btn btn-danger' value = 'Delete' id='delete-row'></td></tr>");
+            $("#list").append("<tr id="+theResponse+"><td>"+itemName+"</td><td>"+itemType+"</td><td><input type='button' class='btn btn-sm btn-danger' value = 'Delete' id='delete-row'></td></tr>");
+            $("#form-content").modal('hide');
           },
           error: function(){
               // uh oh, didn't work. Error message?

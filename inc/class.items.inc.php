@@ -100,7 +100,7 @@ class FocusItems
         return "<tr id=$itemid>
                   <td>$ss$name$se</td>
                   <td>$ss$type$se</td>
-                  <td><input type='button' class='btn btn-danger' value = 'Delete' id='delete-row'></td>
+                  <td><input type='button' class='btn btn-sm btn-danger' value = 'Delete' id='delete-row'></td>
                 </tr>";
     }
 

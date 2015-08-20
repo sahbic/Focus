@@ -16,11 +16,36 @@
     <script>
     $(function(){
     $('.colorpicker-component').colorpicker();
-    $('#Thickness').slider();
-    $('#Formality').slider();
-    $('#Length').slider();
-    $('#Attractiveness').slider();
-    $('#Fitness').slider();
+    $('#Thickness').slider({
+      ticks: [0,25, 50,75, 100],
+      value: 50,
+      step: 25,
+      tooltip: 'hide'
+  });
+    $('#Formality').slider({
+      ticks: [0,25, 50,75, 100],
+      value: 50,
+      step: 25,
+      tooltip: 'hide'
+  });
+    $('#Length').slider({
+      ticks: [0, 50, 100],
+      value: 50,
+      step: 50,
+      tooltip: 'hide'
+  });
+    $('#Attractiveness').slider({
+      ticks: [0,25, 50,75, 100],
+      value: 50,
+      step: 25,
+      tooltip: 'hide'
+  });
+    $('#Fitness').slider({
+      ticks: [0,25, 50,75, 100],
+      value: 50,
+      step: 25,
+      tooltip: 'hide'
+  });
     });
     </script>
   </body>
